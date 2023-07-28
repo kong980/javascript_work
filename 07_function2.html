@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function getNumber(){
+            return 123;
+        }
+
+        console.log(getNumber()); //123
+        console.log(getNumber); ///f getNumber(){return 123;}
+        console.log(typeof(getNumber())); //number
+        console.log(typeof(getNumber)); //function
+
+        // //데이터 타입 확인
+        // console.log(typeof('Hello')); //string
+        // console.log(typeof('Hello') === 'string'); //true
+        // console.log(typeof(123) === 'number'); //true
+        // console.log(typeof(undefined) ==='undefined'); //true
+        // console.log(typeof(null) ==='null'); //false : 비교가 안됨
+        // console.log(typeof(function(){}) ==='function'); //true
+
+        // console.log(typeof(null)); //object
+        // console.log(typeof(null) ==='object'); //true
+        // console.log(typeof([]) ==='object'); //true
+        // console.log(typeof({}) ==='object'); //true
+
+        // console.log([].constructor); //생성자 함수가 있는지 확인(모든 객체는 생성자 함수를 가지고 있다.) --> 배열에 해당하는 것을 구별할 수 있음
+        // console.log([].constructor ===Array); //true
+
+        // console.log({}.constructor); //Object
+        // console.log([].constructor === Object); //true
+
+        // console.log(Object.prototype.toString.call(null)); //[object null] --> null을 구별 할 수 있는 비교 방법
+        // console.log(Object.prototype.toString.call(null).slice(8, -1) === 'Null'); // slice : 필요한 문자열을 잘라서 출력 가능.
+        // console.log(Object.prototype.toString.call([])); //[object Array]
+        // console.log(Object.prototype.toString.call(123)); //[object Number]
+
+        function checkType(data){
+            return Object.prototype.toString.call(data);
+        }
+
+        console.log(checkType("Hello World"));
+        console.log(checkType(123));
+        console.log(checkType([]));
+        console.log(checkType({}));
+        console.log(checkType(null));
+        console.log(checkType(function(){})); //function
+        console.log(checkType(checkType)); //function
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
