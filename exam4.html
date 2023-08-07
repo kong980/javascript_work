@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    //직각삼각형
+
+     function triangle1(num){
+         for(let i=0; i<num; i++){
+        for(let j=0; j<=i; j++){
+            if((i-j)>=0){
+                document.write("*");
+            }; 
+        };document.write("<br>");
+    };
+
+     }
+
+      triangle1(window.prompt("직각삼각형 숫자 입력 : "));
+
+     //정삼각형
+
+     function triangle2(num){
+        for(let i=1; i<(Number(num)+1); i++){
+         for(let j=0; j<(Number(num)-i); j++){
+             document.write("&nbsp");
+         };
+        for(let k=1; k<=(2*i)-1; k++){
+            document.write("*");
+        };
+        document.write("<br>");
+     };
+     }
+     
+
+     triangle2(window.prompt("정삼각형 숫자 입력 : "));
+    
+     //구구단
+     function multiplication(num){
+        for(let i=1; i<=num; i++){
+            document.write(`- ${i}단 - <br>`);
+            for(let j=1; j<10; j++){
+                
+                document.write(`${i} X ${j} = ${i*j} &nbsp`);
+            };
+            document.write("<br><br>");
+        };
+
+     };
+
+     multiplication(window.prompt("구구단 숫자 입력 : "));
+
+</script>
+<body>
+</body>
+</html>
